@@ -22,6 +22,7 @@ public class XemChiTietDSDongGopFrame extends javax.swing.JFrame {
     public XemChiTietDSDongGopFrame(DongGopSP donggop) {
         this.donggop = donggop;
         initComponents();
+        this.setTitle("Chi tiêt đóng góp của hộ gia đình");
         setView();
         this.addWindowListener(new WindowAdapter() {
             @Override
@@ -83,6 +84,8 @@ public class XemChiTietDSDongGopFrame extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(250, 250, 250));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 34)); // NOI18N
         jLabel1.setForeground(java.awt.Color.gray);

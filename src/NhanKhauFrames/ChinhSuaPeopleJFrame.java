@@ -73,6 +73,7 @@ public class ChinhSuaPeopleJFrame extends javax.swing.JFrame {
     }
 
     public void setBandau() {
+        if(nhankhau.getGioiTinh().equals("Nữ")) gioiTinhCbb.setSelectedIndex(1);
         hoTenTxb.setText(nhankhau.getHoTen());
         ngayDinhTxb.setText(nhankhau.getNgaySinh()+"");
         nguyenQuanTxb.setText(nhankhau.getNguyenQuan());
@@ -112,7 +113,40 @@ public class ChinhSuaPeopleJFrame extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }
-
+    
+    private boolean validateValueInForm() {
+        // check null
+        if (hoTenTxb.getText().trim().isEmpty() 
+                || nguyenQuanTxb.getText().trim().isEmpty()
+                || tonGiaoTxb.getText().trim().isEmpty()
+                || danTocTxb.getText().trim().isEmpty()
+                || quocTichTxb.getText().trim().isEmpty()
+                || cmtTxb.getText().trim().isEmpty()
+                || diaChiHienNayTxb.getText().trim().isEmpty()
+                || ngheNghiepTxb.getText().trim().isEmpty()
+                || noiLamViecTxb.getText().trim().isEmpty()
+                || ngayDinhTxb.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(rootPane, "Vui lòng nhập hết các trường bắt buộc", "Warning", JOptionPane.WARNING_MESSAGE);
+            return false;
+        }
+         if(ngayDinhTxb.getText().matches("(19|20)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])")){
+            JOptionPane.showMessageDialog(null, "Định dạng ngày là yyyy-mm-dd");
+            return false;
+        }
+        // check dinh dang so chung minh thu
+        try {
+                long d = Long.parseLong(cmtTxb.getText());
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(rootPane, "Số CMT không thể chứa các ký tự", "Warning", JOptionPane.WARNING_MESSAGE);
+                return false;
+            }
+        // kiem tra do dai cmt
+        if (cmtTxb.getText().length() != 9 && cmtTxb.getText().length() != 12) {
+            JOptionPane.showMessageDialog(rootPane, "Vui lòng nhập đúng định dạng CMT", "Warning", JOptionPane.WARNING_MESSAGE);
+            return false;
+        }
+        return true;
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -159,7 +193,6 @@ public class ChinhSuaPeopleJFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jPanel1.setBackground(java.awt.Color.white);
         jPanel1.setPreferredSize(new java.awt.Dimension(700, 540));
 
         hoTenTxb.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -308,7 +341,7 @@ public class ChinhSuaPeopleJFrame extends javax.swing.JFrame {
 
         jLabel18.setBackground(new java.awt.Color(152, 251, 152));
         jLabel18.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
-        jLabel18.setForeground(java.awt.Color.gray);
+        jLabel18.setForeground(java.awt.Color.darkGray);
         jLabel18.setText("CHỈNH SỬA NHÂN KHẨU");
         jLabel18.setFocusable(false);
         jLabel18.setMaximumSize(new java.awt.Dimension(500, 45));
@@ -396,16 +429,15 @@ public class ChinhSuaPeopleJFrame extends javax.swing.JFrame {
                                                 .addGap(18, 18, 18)
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                            .addComponent(jLabel33, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                        .addGap(362, 362, 362))
+                                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(jLabel33, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                     .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                             .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addGap(17, 17, 17)
-                                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(362, 362, 362)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -558,9 +590,10 @@ public class ChinhSuaPeopleJFrame extends javax.swing.JFrame {
 
     // su ly su kien nhan nut create
     private void CreateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateBtnActionPerformed
+        if(validateValueInForm()){
         capnhapNhankhau();
         dispose();
-        current.setViewTable();
+        current.setViewTable();}
     }//GEN-LAST:event_CreateBtnActionPerformed
 
                                       

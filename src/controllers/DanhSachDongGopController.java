@@ -42,6 +42,7 @@ public class DanhSachDongGopController {
 
     static final String[] COLUMNS = {"STT", "Mã đóng góp", "Tên đợt đóng góp", "Năm"};
     private CacHoDongGopController nextController;
+
     public DanhSachDongGopController(JPanel panel, CacHoDongGopController nextController) {
         this.nextController = nextController;
         this.panel = panel;
@@ -149,10 +150,12 @@ public class DanhSachDongGopController {
             fr.setVisible(true);
         }
         if (btnname.equals("Xoa")) {
-            int x = table.getSelectedRow();
-            deleteDotDongGop(danhsach.get(x));
-            setView();
-            nextController.setView();
+            if (JOptionPane.showConfirmDialog(null, "Bạn chắc chắn xóa chứ???", "Warning!!", JOptionPane.YES_NO_OPTION) == 0) {
+                int x = table.getSelectedRow();
+                deleteDotDongGop(danhsach.get(x));
+                setView();
+                nextController.setView();
+            };
         }
     }
 }

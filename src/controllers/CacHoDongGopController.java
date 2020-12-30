@@ -135,42 +135,46 @@ public class CacHoDongGopController {
             e.printStackTrace();
         }
     }
-    
-    public void deleteDongGop(DG_HKModel dg){
-        try{
+
+    public void deleteDongGop(DG_HKModel dg) {
+        try {
             Connection conn = SQLConnection.getConnection();
             String s = "delete from DG_HK where NAM = ? and HOKHAUID = ? and DONGGOPID = ?";
             PreparedStatement stm = conn.prepareStatement(s);
             stm.setInt(1, dg.getNam());
-            stm.setString(2,dg.getHoKhauID());
-            stm.setString(3,dg.getDongGopID());
+            stm.setString(2, dg.getHoKhauID());
+            stm.setString(3, dg.getDongGopID());
             int x = stm.executeUpdate();
-            if(x > 0) JOptionPane.showMessageDialog(null, "Xóa thành công!!");
+            if (x > 0) {
+                JOptionPane.showMessageDialog(null, "Xóa thành công!!");
+            }
             conn.close();
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    
+
     public void xulyButton(String btnname) {
-        if(btnname.equals("Chitiet")){
+        if (btnname.equals("Chitiet")) {
             int x = table.getSelectedRow();
             XemChiTietDSDongGopFrame fr = new XemChiTietDSDongGopFrame(danhsach.get(x));
             fr.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
             fr.setLocationRelativeTo(null);
             fr.setVisible(true);
         }
-        if(btnname.equals("Chinhsua")){
+        if (btnname.equals("Chinhsua")) {
             int x = table.getSelectedRow();
-            ChinhSuaDSDongGop fr = new ChinhSuaDSDongGop(danhsach.get(x),this);
+            ChinhSuaDSDongGop fr = new ChinhSuaDSDongGop(danhsach.get(x), this);
             fr.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
             fr.setLocationRelativeTo(null);
             fr.setVisible(true);
         }
-        if(btnname.equals("Xoa")){
-             int x = table.getSelectedRow();
-             deleteDongGop(danhsach.get(x).getDg());
-             setView();
+        if (btnname.equals("Xoa")) {
+            if (JOptionPane.showConfirmDialog(null, "Bạn chắc chắn xóa chứ???", "Warning!!", JOptionPane.YES_NO_OPTION) == 0) {
+                int x = table.getSelectedRow();
+                deleteDongGop(danhsach.get(x).getDg());
+                setView();
+            }
         }
     }
 }

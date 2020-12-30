@@ -39,6 +39,7 @@ public class ChiTietHoKhauFrame extends javax.swing.JFrame {
         this.gd = gd;
         setViewChuHo();
         setViewTable();
+        this.setTitle("Chi tiết hộ gia đình");
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
@@ -63,7 +64,7 @@ public class ChiTietHoKhauFrame extends javax.swing.JFrame {
         }
         this.table = new JTable(dt);
         table.setDefaultEditor(Object.class, null);
-        table.setFillsViewportHeight(true);
+        //table.setFillsViewportHeight(true);
         table.getTableHeader().setFont(new Font("NewellsHand", Font.BOLD, 13));
         table.getTableHeader().setBackground(new Color(152, 251, 152));
         
@@ -125,17 +126,23 @@ public class ChiTietHoKhauFrame extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel2.setText("THÔNG TIN CHỦ HỘ:");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("Họ và tên:");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("Ngày sinh:");
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setText("Nguyên quán:");
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setText("Địa chỉ hiện nay:");
+
+        hotenlb.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+
+        ngaysinhlb.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+
+        nguyenquanlb.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 

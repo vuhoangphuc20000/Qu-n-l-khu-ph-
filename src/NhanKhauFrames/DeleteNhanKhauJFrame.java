@@ -29,11 +29,12 @@ public class DeleteNhanKhauJFrame extends javax.swing.JFrame {
      */
     private NhanKhauModel nhankhau;
     private NhanKhauController manage;
+
     public DeleteNhanKhauJFrame(NhanKhauModel nhankhau, NhanKhauController manage) {
         this.nhankhau = nhankhau;
         this.manage = manage;
         initComponents();
-        
+
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
@@ -48,35 +49,35 @@ public class DeleteNhanKhauJFrame extends javax.swing.JFrame {
         //this.parentFrame.setEnabled(true);
         dispose();
     }
-    
-    public void Delete(){
-       try{
-        getNhanKhau();
-        Connection conn =  SQLConnection.getConnection();
-        String sql = "update NHANKHAU set LYDOXOA = ?, IDNGUOIXOA = ?, NGAYXOA = ? WHERE NHANKHAUID = ?";
-        PreparedStatement stm = conn.prepareStatement(sql);
-        stm.setString(1,nhankhau.getLyDoXoa());
-        stm.setInt(2, nhankhau.getIdNguoiXoa());
-        stm.setDate(3,nhankhau.getNgayXoa());
-        stm.setInt(4,nhankhau.getNhanKhauID());
-        int x = stm.executeUpdate();
-        if(x > 0){
-            this.manage.setViewTable();
-            JOptionPane.showMessageDialog(null,"OK");
+
+    public void Delete() {
+        try {
+            getNhanKhau();
+            Connection conn = SQLConnection.getConnection();
+            String sql = "update NHANKHAU set LYDOXOA = ?, IDNGUOIXOA = ?, NGAYXOA = ? WHERE NHANKHAUID = ?";
+            PreparedStatement stm = conn.prepareStatement(sql);
+            stm.setString(1, nhankhau.getLyDoXoa());
+            stm.setInt(2, nhankhau.getIdNguoiXoa());
+            stm.setDate(3, nhankhau.getNgayXoa());
+            stm.setInt(4, nhankhau.getNhanKhauID());
+            int x = stm.executeUpdate();
+            if (x > 0) {
+                this.manage.setViewTable();
+                JOptionPane.showMessageDialog(null, "OK");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-       }
-       catch(Exception e){
-           e.printStackTrace();
-       }
     }
-    
-    public void getNhanKhau(){
+
+    public void getNhanKhau() {
         nhankhau.setLyDoXoa(lyDoXoatxa.getText());
         nhankhau.setIdNguoiXoa(1);
-        long millis=System.currentTimeMillis();   
-        java.sql.Date date=new java.sql.Date(millis);
+        long millis = System.currentTimeMillis();
+        java.sql.Date date = new java.sql.Date(millis);
         nhankhau.setNgayXoa(date);
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -95,6 +96,7 @@ public class DeleteNhanKhauJFrame extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         jRadioButtonMenuItem1.setSelected(true);
         jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
@@ -135,6 +137,10 @@ public class DeleteNhanKhauJFrame extends javax.swing.JFrame {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/dlt.png"))); // NOI18N
 
+        jLabel4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel4.setText("(*)");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -149,7 +155,9 @@ public class DeleteNhanKhauJFrame extends javax.swing.JFrame {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1)))
-                .addGap(24, 24, 24)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4)
+                .addGap(4, 4, 4)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -164,18 +172,24 @@ public class DeleteNhanKhauJFrame extends javax.swing.JFrame {
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(51, 51, 51)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 26, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(51, 51, 51)
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 26, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -208,9 +222,12 @@ public class DeleteNhanKhauJFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        getNhanKhau();
-        Delete();
-        dispose();
+        if (JOptionPane.showConfirmDialog(null, "Bạn chắc chắn xóa chứ???", "Warning!!", JOptionPane.YES_NO_OPTION) == 0) {
+            getNhanKhau();
+            Delete();
+            dispose();
+        };
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -223,6 +240,7 @@ public class DeleteNhanKhauJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     private javax.swing.JScrollPane jScrollPane1;

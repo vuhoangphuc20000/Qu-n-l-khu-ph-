@@ -42,6 +42,7 @@ public class ChonDotDongGopFrame extends javax.swing.JFrame {
         initComponents();
         this.name = "";
         this.danhsach = new ArrayList<>();
+        this.setTitle("Chọn đợt đóng góp!!");
         setView();
          this.addWindowListener(new WindowAdapter() {
             @Override

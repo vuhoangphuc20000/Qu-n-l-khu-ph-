@@ -28,49 +28,67 @@ public class ChinhSuaPhiVSFrame extends javax.swing.JFrame {
     private GiaDinh gd;
     private KP_HKModel bill;
     private PhiVSController controller;
-    public ChinhSuaPhiVSFrame(GiaDinh gd,KP_HKModel bill,PhiVSController controller) {
+
+    public ChinhSuaPhiVSFrame(GiaDinh gd, KP_HKModel bill, PhiVSController controller) {
         this.controller = controller;
         this.gd = gd;
         this.bill = bill;
         initComponents();
         setView();
-         this.addWindowListener(new WindowAdapter() {
+        this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
                 dispose();
             }
-    });
+        });
     }
-    
-    public void setView(){
+
+    public void setView() {
         chuhotf.setText(gd.getDanhsach().get(0).getHoTen());
         diachitf.setText(gd.getHokhau().getDiaChi());
         mahokhautf.setText(bill.getHoKhauID());
-        namtf.setText(bill.getNam()+"");
-        ngaydongtf.setText(bill.getNgayDong()+"");
-        ngaysinhtf.setText(gd.getDanhsach().get(0).getNgaySinh()+"");
+        namtf.setText(bill.getNam() + "");
+        ngaydongtf.setText(bill.getNgayDong() + "");
+        ngaysinhtf.setText(gd.getDanhsach().get(0).getNgaySinh() + "");
         nguoidongtf.setText(bill.getNguoiDong());
         nguyenquantf.setText(gd.getDanhsach().get(0).getNguyenQuan());
     }
-    public void getBill(){
+
+    public void getBill() {
         bill.setNgayDong(java.sql.Date.valueOf(ngaydongtf.getText()));
         bill.setNguoiDong(nguoidongtf.getText());
     }
-    public void ghinhanKQ(){
-        try{
+
+    public void ghinhanKQ() {
+        try {
             Connection conn = SQLConnection.getConnection();
             String s = "update KP_HK set NGAYDONG = ?, NGUOIDONG = ? where NAM = ? AND HOKHAUID = ?";
             PreparedStatement stm = conn.prepareStatement(s);
-            stm.setDate(1,bill.getNgayDong());
-            stm.setString(2,bill.getNguoiDong());
-            stm.setInt(3,bill.getNam());
-            stm.setString(4,bill.getHoKhauID());
+            stm.setDate(1, bill.getNgayDong());
+            stm.setString(2, bill.getNguoiDong());
+            stm.setInt(3, bill.getNam());
+            stm.setString(4, bill.getHoKhauID());
             int x = stm.executeUpdate();
-            if(x > 0) JOptionPane.showMessageDialog(null,"Cập nhập thành công");
-        }catch(Exception e){
+            if (x > 0) {
+                JOptionPane.showMessageDialog(null, "Cập nhập thành công");
+            }
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
+    public boolean check() {
+        if (!nguoidongtf.getText().matches("^[a-zA-Z\\sàáạãêễúũăâầấ_-]{3,100}$")) {
+            JOptionPane.showMessageDialog(null, "Họ tên người đóng không hợp lệ???");
+            return false;
+        }
+        if (!ngaydongtf.getText().matches("((19|20)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])")) {
+            JOptionPane.showMessageDialog(null, "Định dạng ngày là yyyy-mm-dd");
+            return false;
+        }
+        return true;
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -104,7 +122,7 @@ public class ChinhSuaPhiVSFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jLabel1.setForeground(java.awt.Color.gray);
+        jLabel1.setForeground(new java.awt.Color(51, 51, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("CHỈNH SỬA THU PHÍ");
 
@@ -287,10 +305,12 @@ public class ChinhSuaPhiVSFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        getBill();
-        ghinhanKQ();
-        dispose();
-        controller.setTable();
+        if (check()) {
+            getBill();
+            ghinhanKQ();
+            dispose();
+            controller.setTable();
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

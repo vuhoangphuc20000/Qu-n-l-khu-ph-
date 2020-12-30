@@ -43,6 +43,7 @@ public class AddHoKhauFrame extends javax.swing.JFrame {
         this.controller = controller;
         this.hogiadinh = new ArrayList<>();
         setViewTableThanhVien();
+        this.setTitle("Thêm mới hộ khẩu");
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {

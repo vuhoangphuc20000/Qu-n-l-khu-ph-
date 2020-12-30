@@ -3,13 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/QLThuPhi/src/controllers/HoKhauController.java</file>
-            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/QLThuPhi/src/cacdotdonggopFrames/ThongKeDongGopFrame.java</file>
-            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/QLThuPhi/src/views/NhanKhauManagePanel.java</file>
-            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/QLThuPhi/src/HoKhauFrames/ThongKeThuPhiDGFrame.java</file>
-            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/QLThuPhi/src/views/HomePagePanel.java</file>
-            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/QLThuPhi/src/views/MainFrame.java</file>
-            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/QLThuPhi/src/views/HoKhauManagePanel.java</file>
+            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/QLThuPhi/cnpm/src/controllers/NhanKhauController.java</file>
+            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/QLThuPhi/cnpm/src/qlthuphi/QLThuPhi.java</file>
+            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/QLThuPhi/cnpm/src/NhanKhauFrames/XemChiTietFrame.java</file>
+            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/QLThuPhi/cnpm/src/HoKhauFrames/AddHoKhauFrame.java</file>
+            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/QLThuPhi/cnpm/src/views/MainFrame.java</file>
+            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/QLThuPhi/cnpm/src/views/LoginUI.java</file>
+            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/QLThuPhi/cnpm/src/NhanKhauFrames/AddNewPeopleJFrame.java</file>
+            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/QLThuPhi/cnpm/src/services/DongGopServiceFrame.java</file>
+            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/QLThuPhi/cnpm/src/NhanKhauFrames/ChinhSuaPeopleJFrame.java</file>
+            <file>file:/C:/Users/Admin/Documents/NetBeansProjects/QLThuPhi/cnpm/src/services/ThuPhiFrames.java</file>
         </group>
     </open-files>
 </project-private>

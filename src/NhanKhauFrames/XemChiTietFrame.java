@@ -147,76 +147,76 @@ public class XemChiTietFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("TIỂU SỬ CÁ NHÂN");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel2.setText("Họ Tên:");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel3.setText("Ngày sinh:");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel4.setText("Dân tộc:");
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel5.setText("Tôn giáo:");
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel6.setText("Nghề nghiệp:");
 
-        hoTenlb.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        hoTenlb.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         hoTenlb.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
-        ngaysinhlb.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        ngaysinhlb.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         ngaysinhlb.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
-        dantoclb.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        dantoclb.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         dantoclb.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
-        tongiaolb.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        tongiaolb.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         tongiaolb.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
-        nghenghieplb.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        nghenghieplb.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         nghenghieplb.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
-        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel11.setText("Giới tính:");
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel12.setText("Nguyên quán:");
 
-        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel13.setText("Địa chỉ hiện nay:");
 
-        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel14.setText("Nơi làm việc:");
 
-        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel15.setText("Ghi chú:");
 
-        gioitinhlb.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        gioitinhlb.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         gioitinhlb.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
-        nguyenquanlb.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        nguyenquanlb.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         nguyenquanlb.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
-        noilamvieclb.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        noilamvieclb.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         noilamvieclb.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
-        ghichulb.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        ghichulb.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         ghichulb.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/—Pngtree—business manager information on business_4424023.png"))); // NOI18N
@@ -329,11 +329,11 @@ public class XemChiTietFrame extends javax.swing.JFrame {
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("THÀNH VIÊN GIA ĐÌNH");
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel8.setText("Quan hệ với chủ hộ:");
 
-        qhchuholb.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        qhchuholb.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         qhchuholb.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -364,7 +364,7 @@ public class XemChiTietFrame extends javax.swing.JFrame {
                         .addGap(247, 247, 247)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(qhchuholb, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
